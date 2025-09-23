@@ -16,7 +16,7 @@ Um pequeno aplicativo em Python que verifica aniversários de contatos e exibe u
 ## Como usar
 
 1. Clone o repositório ou baixe o arquivo `niver.pyw`.
-2. Abra o arquivo `aniversarios.txt` e adicione os aniversários no formato:
+2. Abra o arquivo `aniversarios.txt` e adicione os aniversários no formato (caso o `aniversariantes.txt` não exista, crie ele junto com o arquivo `niver.pyw`):
 
 ```
 Nome,DD/MM/AAAA
