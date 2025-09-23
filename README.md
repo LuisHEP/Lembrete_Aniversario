@@ -1,78 +1,42 @@
-# 🎉 Lembrete de Aniversários Automático — `niver.py`
 
-Este é um pequeno utilitário em Python que verifica diariamente se algum contato faz aniversário no dia atual e exibe uma notificação pop-up com os aniversariantes. O script é configurado para iniciar automaticamente junto com o Windows.
+## 🛠️ Como Funciona
 
-## 🧩 Funcionalidades
+1. **Inicialização:** Ao fazer login no Windows, o script é executado automaticamente
+2. **Delay:** Aguarda 5 segundos para não interferir na inicialização do sistema
+3. **Verificação:** Compara a data atual com as datas de aniversário do arquivo
+4. **Notificação:** Se houver aniversariantes, exibe um pop-up com os detalhes
 
-- Verifica aniversários com base em um arquivo de texto (`aniversarios.txt`).
-- Exibe uma notificação do sistema com o nome, idade e ano de nascimento dos aniversariantes.
-- Cria automaticamente o arquivo de aniversariados caso não exista.
-- Adiciona o script à pasta de inicialização do Windows (`Startup`), garantindo que ele seja executado a cada reinicialização do computador.
+## 🐛 Solução de Problemas
 
-## 📁 Estrutura do Projeto
+### O script não executa automaticamente
+- Verifique se o atalho está na pasta de inicialização correta
+- Confirme que o Python está instalado e associado a arquivos `.pyw`
 
-```bash
-📁 niver/
- ┣ 📄 niver.py
- ┗ 📄 aniversarios.txt  ← gerado automaticamente, se não existir
-```
+### Caracteres especiais não aparecem corretamente
+- Certifique-se de que o arquivo `aniversarios.txt` está salvo em UTF-8
 
-## 🛠️ Requisitos
+### Notificação não aparece
+- Verifique se a data do sistema está correta
+- Confirme o formato das datas no arquivo (DD/MM/AAAA)
+- Certifique-se de que não há espaços extras nos nomes ou datas
 
-- Python 3.x
-- Sistema Operacional: **Windows**
-- Biblioteca padrão do Python (`tkinter`, `os`, `sys`, `datetime`) — já inclusas
+### Script abre uma janela do terminal
+- Use o arquivo `.pyw` em vez de `.py` para executar sem terminal
 
-## 🚀 Como Usar
+## 💡 Dicas
 
-1. **Clone o repositório ou baixe o `niver.py`:**
-   ```bash
-   git clone https://github.com/seu-usuario/niver.git
-   ```
+- Mantenha o arquivo `aniversarios.txt` atualizado com novos contatos
+- Use comentários (linhas começando com `#`) para organizar seus contatos
+- O arquivo é simples texto, fácil de fazer backup ou migrar
 
-2. **Execute o script uma vez:**
-   ```bash
-   python niver.py
-   ```
+## 📄 Licença
 
-   - Isso irá:
-     - Criar o arquivo `aniversarios.txt` (se não existir);
-     - Adicionar um atalho `.bat` à pasta de inicialização do Windows para que o script rode automaticamente ao iniciar o sistema;
-     - Exibir um aviso caso existam aniversariantes hoje.
+Este projeto está sob a licença MIT. Sinta-se livre para usar e modificar.
 
-3. **Edite o arquivo `aniversarios.txt`:**
+## 🤝 Contribuições
 
-   Use qualquer editor de texto para adicionar aniversários no seguinte formato:
+Contribuições são bem-vindas! Se encontrar algum problema ou tiver sugestões, abra uma issue no GitHub.
 
-   ```
-   # Formato: Nome,DD/MM/AAAA
-   Maria Silva,12/08/1998
-   João Souza,04/11/2000
-   ```
+---
 
-## 📌 Observações
-
-- O script **não envia e-mails** nem salva dados em nuvem. Toda informação permanece local.
-- O aviso só aparece se houver aniversariantes no dia atual.
-- A pasta de inicialização do Windows utilizada é:
-  ```
-  C:\Users\SeuUsuario\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-  ```
-
-## 🧼 Como Remover da Inicialização
-
-Para impedir que o script seja executado automaticamente com o Windows, basta deletar o arquivo:
-
-```
-niver_startup.bat
-```
-
-que estará dentro da pasta `Startup` mencionada acima.
-
-## 📃 Licença
-
-Este projeto é de uso livre. Sinta-se à vontade para modificar e distribuir.
-
-## 🙋‍♂️ Autor
-
-Desenvolvido por **Luis Paladino**
+**Desenvolvido com Python e Tkinter** 🐍
